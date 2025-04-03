@@ -49,7 +49,8 @@ ol {
 /* Header */
 
 .header {
-    margin-top: 2rem;
+    padding: 2rem 0;
+    background: white;
 }
 
 .header__wrapper {
@@ -81,13 +82,13 @@ ol {
 }
 
 .header__nav-list {
+    backdrop-filter: blur(25px);
     display: flex;
     gap: 2.7rem;
     padding: 0.6rem 1.3rem;
     position: relative;
-    border-radius: 9px;
-    background: linear-gradient(white, white) padding-box, linear-gradient(90deg, #f3dce1, #f8e3cd, #f2eac2, #f2e8ca, #d2ddbf) border-box;
-    border: 2px solid transparent;
+    border-radius: 8px;
+    background: url('/images/nav-bar-outline.bdf8f8c4.svg');
 }
 
 .header__nav-link {
@@ -164,6 +165,11 @@ ol {
 }
 
 /* Gallery Section */
+
+#gallery {
+    height: 200vh;
+    overflow: hidden;
+}
 
 .gallery__grid {
     background-color: black;
@@ -301,36 +307,95 @@ ol {
 }
 
 /* Team Section */
+
 .team {
-    background-color: #ffffff;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    overflow: hidden;
 }
 
-.team__header {
+.first__panel {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.first__panel h2 {
+    font-size: 3.7rem;
+    line-height: 1.2;
+}
+
+.first__panel p {
+    font-size: 2rem;
+    line-height: 1.2;
+    color: #828282;
+}
+
+.first__panel .content__left h2 {
+    margin-bottom: 50px;
+}
+
+.first__panel .content__right {
+    padding-left: 40px;
+}
+
+.first__panel .content__right h2 {
+    margin-bottom: 20px;
+}
+
+.first__panel .content__left {
+    width: 768px;
+    padding-left: 115px;
+}
+
+.first__panel .content__right {
+    width: 50vw;
+}
+
+.team__panel {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 20px;
+    border-right: 1px solid #333;
+}
+
+.team__panel:last-child {
+    border-right: none;
+    margin-left: 100px;
+}
+
+
+.team__panel .content__left {
+    width: 30vw;
     text-align: center;
-    margin-bottom: 5rem;
 }
 
-.team__title {
-    font-size: 4rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+.team__panel .content__left img {
+    width: 80%;
 }
 
-.team__subtitle {
-    font-size: 1.8rem;
-    color: #838383;
+.team__panel .content__center {
+    width: 30vw;
+}
+
+.team__panel .content__right {
+    padding: 0 150px 0 60px;
+}
+
+.team__panel .content__right h2 {
+    font-size: 3.6rem;
+    line-height: 1.2;
+}
+
+.team__panel .content__right p {
+    font-size: 2rem;
+    line-height: 1.2;
 }
 
 
-.team__grid {
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    gap: 4rem;
-}
 
-.founder__misbah-info {
-    border-right: 1px solid #8b8b8b;
-}
+
 
 /* Work Section */
 .work-section {
@@ -401,6 +466,7 @@ ol {
 .contact {
     margin-top: 3.9rem;
     margin-right: 12.5rem;
+    background: #fff;
 }
 
 .contact__content {
@@ -465,18 +531,47 @@ ol {
     resize: none;
 }
 
+main {
+    background: #fff;
+}
 
 /* Footer */
 .footer {
     background-color: #000000;
-    margin-top: 10rem;
+    height: 100vh;
     position: relative;
+    z-index: -1;
+}
+
+.footer__content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.footer__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.footer__background img {
+    height: 100%;
+    width: 100%;
 }
 
 .footer__center img {
     position: absolute;
-    right: 50%;
-    bottom: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .footer__nav-link {
@@ -492,7 +587,10 @@ ol {
 }
 
 .footer__bottom {
-    padding-top: 9rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
 }
 
 .footer__privacy a {
@@ -501,7 +599,9 @@ ol {
 }
 
 .footer_back {
-    padding-top: 4rem;
+    position: absolute;
+    right: 110px;
+    bottom: 100px;
 }
 
 .footer__back-arrow img {
@@ -510,4 +610,10 @@ ol {
 
 .footer__back-text {
     color: white;
+}
+
+.footer__nav {
+    position: absolute;
+    bottom: 120px;
+    left: 110px;
 }
